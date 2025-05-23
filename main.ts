@@ -7,16 +7,6 @@ radio.onReceivedNumber(function (receivedNumber) {
         }
     }
 })
-input.onButtonPressed(Button.A, function () {
-    direction = input.compassHeading()
-    if (direction <= 5 || direction >= 355) {
-        basic.showString("N")
-        music.play(music.tonePlayable(698, music.beat(BeatFraction.Breve)), music.PlaybackMode.UntilDone)
-    } else {
-        basic.clearScreen()
-        music.ringTone(0)
-    }
-})
 input.onGesture(Gesture.SixG, function () {
     music.play(music.stringPlayable("C5 G C5 G C5 G C5 G ", 110), music.PlaybackMode.InBackground)
     for (let index = 0; index < 8; index++) {
@@ -36,7 +26,6 @@ input.onGesture(Gesture.SixG, function () {
             `)
     }
 })
-let direction = 0
 music.play(music.stringPlayable("C D E C E G A G ", 170), music.PlaybackMode.InBackground)
 basic.showString("safeRIDE")
 radio.setGroup(1)
